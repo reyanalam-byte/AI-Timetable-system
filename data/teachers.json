@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Ram",
+    "subject": "Maths",
+    "freeSlots": ["10AM", "3PM"],
+    "specialization": [7, 8, 9],
+    "workload": 3
+  },
+  {
+    "name": "Shyam",
+    "subject": "Maths",
+    "freeSlots": ["11AM", "1PM"],
+    "specialization": [6, 7, 8],
+    "workload": 2
+  },
+  {
+    "name": "Jessy",
+    "subject": "Maths",
+    "freeSlots": ["9AM", "1PM"],
+    "specialization": [8, 9, 10],
+    "workload": 4
+  },
+  {
+    "name": "Zyna",
+    "subject": "Maths",
+    "freeSlots": ["9AM", "1PM"],
+    "specialization": [9, 10, 11, 13],
+    "workload": 2
+  }
+]

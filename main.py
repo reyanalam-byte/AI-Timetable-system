@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 from scheduler import assign_replacement
 
 app = FastAPI()
 
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -13,16 +13,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Home Route
 @app.get("/")
 def home():
-    return {"message": "Backend Running"}
 
+    return {
+        "message": "Backend Running"
+    }
+
+# Teacher Absent Route
 @app.post("/teacher/absent/{teacher_name}")
-def teacher_absent(teacher_name: str):
+def mark_absent(teacher_name: str):
 
-    result = assign_replacement(teacher_name)
+    replacements = assign_replacement(teacher_name)
 
     return {
         "absentTeacher": teacher_name,
-        "replacements": result
+        "totalReplacements": len(replacements),
+        "replacements": replacements
     }
